@@ -1,9 +1,12 @@
 #pragma once
 
 #include <GLFW/glfw3.h>
+
 #include "../Color.h"
+
 #include <iostream>
-#include <cmath>
+#include <string>
+#include <memory>
 
 namespace fage
 {
@@ -13,7 +16,7 @@ namespace render {
 	class Display
 	{
 	public:
-		Display(const char* title, int width, int height, bool fullscreen);
+		Display(const std::string& title, int width, int height, bool fullscreen);
 		~Display();
 
 		bool Create();
@@ -25,7 +28,7 @@ namespace render {
 		friend class fage::Core;
 
 	private:
-		const char* m_Title;
+		std::string m_Title;
 		int m_Width, m_Height;
 		bool m_Fullscreen;
 

@@ -3,6 +3,7 @@
 #include "Render/Display.h"
 #include "Scene.h"
 #include "Input/Keyboard.h"
+#include "Math/Math.h"
 
 #include <memory>
 #include <iostream>
@@ -10,6 +11,9 @@
 
 namespace fage
 {
+
+	
+
 	class Core
 	{
 		typedef void (*KeyboardCallbackType)(int);
@@ -38,10 +42,12 @@ namespace fage
 
 		bool m_Running = false;
 		
-		std::shared_ptr<Scene> currentScene = nullptr;
+		std::shared_ptr<Scene> m_CurrentScene = nullptr;
 
-		std::vector<KeyboardCallbackType> keyboardListeners;
+		std::vector<KeyboardCallbackType> m_KeyboardListeners;
 		std::shared_ptr<render::Display> m_Display;
 	};
+
+	
 
 }

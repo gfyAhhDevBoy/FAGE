@@ -18,12 +18,12 @@ void Core::CreateDisplay(const char* title, int width, int height, bool fullscre
 
 void Core::ChangeScene(std::shared_ptr<Scene> scene)
 {
-	currentScene = scene;
+	m_CurrentScene = scene;
 }
 
 void Core::AddKeyboardListener(KeyboardCallbackType callback)
 {
-	keyboardListeners.push_back(callback);
+	m_KeyboardListeners.push_back(callback);
 }
 
 bool Core::Run()
@@ -41,10 +41,10 @@ bool Core::Run()
 		ProcessInput();
 
 
-		currentScene->Update();
+		m_CurrentScene->Update(0);
 
 		// Drawing
-		currentScene->Draw(std::shared_ptr(m_Display));
+		m_CurrentScene->Draw(std::shared_ptr(m_Display));
 
 		// Last
 		m_Display->Swap();
@@ -66,7 +66,7 @@ void Core::ProcessInput()
 	{
 		if (glfwGetKey(m_Display->m_Window, static_cast<input::Keycode>(i)) == GLFW_PRESS)
 		{
-			for (auto kb : keyboardListeners)
+			for (auto kb : m_KeyboardListeners)
 			{
 				kb(static_cast<input::Keycode>(i));
 			}

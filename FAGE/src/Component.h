@@ -2,22 +2,21 @@
 
 #include "Render/Display.h"
 
+#include <memory>
+
 namespace fage {
-	class Component {
-	public:
-		Component() = delete;
+class GameObject;
 
-		Component(const Component&) = delete;
-		Component& operator=(const Component&) = delete;
+class Component {
+public:
+	Component(GameObject* parent);
 
-		Component(const Component&&) = delete;
-		Component&& operator=(const Component&&) = delete;
+	virtual void Update(float dt) = 0;
+	virtual void Draw(render::Display& display) = 0;
 
-		virtual void Update(float dt);
-		virtual void Draw(render::Display& display);
+	
 
-	private:
-		GameObject* parent;
-	};
+private:
+	std::shared_ptr<GameObject> m_Parent;
+};
 }
-

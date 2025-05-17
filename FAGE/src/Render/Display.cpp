@@ -3,7 +3,7 @@
 namespace fage
 {
 	namespace render {
-		Display::Display(const char* title, int width, int height, bool fullscreen)
+		Display::Display(const std::string& title, int width, int height, bool fullscreen)
 		{
 			m_Title = title;
 			m_Width = width;
@@ -27,7 +27,7 @@ namespace fage
 			glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 			glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
 
-			m_Window = glfwCreateWindow(m_Width, m_Height, m_Title, 0, 0);
+			m_Window = glfwCreateWindow(m_Width, m_Height, m_Title.c_str(), 0, 0);
 			if (m_Window == NULL)
 			{
 				std::cout << "Failed to create GLFW window" << std::endl;

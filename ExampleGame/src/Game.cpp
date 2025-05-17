@@ -1,5 +1,8 @@
 #include <Engine.h>
 #include <Scene.h>
+#include <GameObject.h>
+
+#include <Components/Test.h>
 
 void KeyboardListener(int);
 
@@ -11,8 +14,8 @@ int main()
 	scene->SetClearColor({ 0.2f, 0.3f, 0.3f, 1.f });
 	fage::Core::Get().ChangeScene(scene);
 	
-
-
+	fage::GameObject* player = scene->CreateGameObject();
+	player->AddComponent<fage::component::Test>();
 
 
 	fage::Core::Get().Run();
