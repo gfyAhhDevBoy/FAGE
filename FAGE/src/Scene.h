@@ -2,7 +2,7 @@
 
 #include <memory>
 
-#include "Display.h"
+#include "Render/Display.h"
 
 namespace fage
 {
@@ -11,7 +11,11 @@ namespace fage
 	public:
 		void Update();
 
-		void Draw(std::weak_ptr<Display> display);
+		void Draw(std::shared_ptr<render::Display> display);
+		void SetClearColor(Color color);
+
+	private:
+		Color clearColor;
 	};
 }
 

@@ -5,9 +5,8 @@
 
 namespace fage
 {
-	class Color
+	struct Color
 	{
-	public:
 		Color() = default;
 		Color(float r, float g, float b, float alpha = 1.f);
 

@@ -163,16 +163,21 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Component.h" />
     <ClInclude Include="src\Color.h" />
-    <ClInclude Include="src\Display.h" />
+    <ClInclude Include="src\Render\Display.h" />
     <ClInclude Include="src\Engine.h" />
     <ClInclude Include="src\Input\Keyboard.h" />
+    <ClInclude Include="src\Input\KeyboardState.h" />
     <ClInclude Include="src\Scene.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Color.cpp" />
-    <ClCompile Include="src\Display.cpp" />
+    <ClCompile Include="src\Component.cpp" />
+    <ClCompile Include="src\Render\Display.cpp" />
     <ClCompile Include="src\Engine.cpp" />
+    <ClCompile Include="src\Input\Keyboard.cpp" />
+    <ClCompile Include="src\Input\KeyboardState.cpp" />
     <ClCompile Include="src\Scene.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

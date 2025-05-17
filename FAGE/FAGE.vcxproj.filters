@@ -18,7 +18,7 @@
     <ClInclude Include="src\Engine.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Display.h">
+    <ClInclude Include="src\Render\Display.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Color.h">
@@ -30,18 +30,33 @@
     <ClInclude Include="src\Input\Keyboard.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\Input\KeyboardState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Component.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Engine.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Display.cpp">
+    <ClCompile Include="src\Render\Display.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\Color.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\Scene.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Input\Keyboard.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Input\KeyboardState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Component.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

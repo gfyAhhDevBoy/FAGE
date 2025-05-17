@@ -5,7 +5,7 @@ namespace fage
     namespace input
     {
 
-        enum Key
+        enum Keycode
         {
             First = -123,
             Unknown = -1,
@@ -137,6 +137,7 @@ namespace fage
 
             Last = Menu
         };
+
     }
 
 }

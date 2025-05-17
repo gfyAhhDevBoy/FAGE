@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Display.h"
+#include "Render/Display.h"
 #include "Scene.h"
 #include "Input/Keyboard.h"
 
@@ -25,7 +25,7 @@ namespace fage
 
 		void CreateDisplay(const char* title = "Fuckass Advanced Game Engine", int width = 800, int height = 600, bool fullscreen = false);
 		
-		void SetCurrentScene(std::shared_ptr<Scene> scene);
+		void ChangeScene(std::shared_ptr<Scene> scene);
 		void AddKeyboardListener(KeyboardCallbackType callback);
 
 		bool Run();
@@ -41,7 +41,7 @@ namespace fage
 		std::shared_ptr<Scene> currentScene = nullptr;
 
 		std::vector<KeyboardCallbackType> keyboardListeners;
-		std::shared_ptr<Display> m_Display;
+		std::shared_ptr<render::Display> m_Display;
 	};
 
 }

@@ -12,11 +12,11 @@ void Core::CreateDisplay(const char* title, int width, int height, bool fullscre
 {
 	if (m_Display == nullptr)
 	{
-		m_Display = std::make_shared<Display>(title, width, height, fullscreen);
+		m_Display = std::make_shared<render::Display>(title, width, height, fullscreen);
 	}
 }
 
-void Core::SetCurrentScene(std::shared_ptr<Scene> scene)
+void Core::ChangeScene(std::shared_ptr<Scene> scene)
 {
 	currentScene = scene;
 }
@@ -36,7 +36,6 @@ bool Core::Run()
 
 	while (m_Running)
 	{
-		m_Display->Clear(Color(0.2, 0.3, 0.3, 1.f));
 
 		// Updating
 		ProcessInput();
@@ -45,7 +44,7 @@ bool Core::Run()
 		currentScene->Update();
 
 		// Drawing
-		currentScene->Draw(std::weak_ptr(m_Display));
+		currentScene->Draw(std::shared_ptr(m_Display));
 
 		// Last
 		m_Display->Swap();
@@ -65,11 +64,11 @@ void Core::ProcessInput()
 {
 	for (int i = input::First; i != input::Last; i++)
 	{
-		if (glfwGetKey(m_Display->m_Window, static_cast<input::Key>(i)) == GLFW_PRESS)
+		if (glfwGetKey(m_Display->m_Window, static_cast<input::Keycode>(i)) == GLFW_PRESS)
 		{
 			for (auto kb : keyboardListeners)
 			{
-				kb(static_cast<input::Key>(i));
+				kb(static_cast<input::Keycode>(i));
 			}
 		}
 	}

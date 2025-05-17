@@ -1,5 +1,4 @@
 #include <Engine.h>
-#include <Display.h>
 #include <Scene.h>
 
 void KeyboardListener(int);
@@ -9,8 +8,12 @@ int main()
 	fage::Core::Get().CreateDisplay();
 	fage::Core::Get().AddKeyboardListener(KeyboardListener);
 	std::shared_ptr<fage::Scene> scene = std::make_shared<fage::Scene>();
-	fage::Core::Get().SetCurrentScene(scene);
+	scene->SetClearColor({ 0.2f, 0.3f, 0.3f, 1.f });
+	fage::Core::Get().ChangeScene(scene);
 	
+
+
+
 
 	fage::Core::Get().Run();
 }

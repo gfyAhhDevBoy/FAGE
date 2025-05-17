@@ -1,16 +1,15 @@
 #pragma once
 
 #include <GLFW/glfw3.h>
-
-#include "Color.h"
-
+#include "../Color.h"
 #include <iostream>
 #include <cmath>
 
 namespace fage
 {
-	class Core;
+class Core;
 
+namespace render {
 	class Display
 	{
 	public:
@@ -23,10 +22,9 @@ namespace fage
 
 		bool ShouldClose();
 
-		friend class Core;
+		friend class fage::Core;
 
 	private:
-
 		const char* m_Title;
 		int m_Width, m_Height;
 		bool m_Fullscreen;
@@ -34,4 +32,4 @@ namespace fage
 		GLFWwindow* m_Window;
 	};
 }
-
+}
