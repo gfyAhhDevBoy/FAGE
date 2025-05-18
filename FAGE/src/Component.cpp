@@ -1,6 +1,6 @@
 #include "Component.h"
 
-fage::Component::Component(GameObject* parent)
+fage::Component::Component(GameObject* parent) : m_Parent(parent)
 {
-	m_Parent = std::shared_ptr<GameObject>(parent);
+	
 }

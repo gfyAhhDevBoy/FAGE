@@ -11,7 +11,8 @@ namespace fage
 	class GameObject
 	{
 	public:
-		GameObject() = default;
+		GameObject();
+		GameObject(Vec2f pos);
 
 		void Update(float dt);
 		void Draw(render::Display& display);
@@ -24,7 +25,8 @@ namespace fage
 		void AddComponent(Args&&... args)
 		{
 			static_assert(std::is_base_of<Component, T>::value, "T has to be a Component");
-			std::unique_ptr<T> component = std::make_unique<T>(this, args...);
+			std::unique_ptr<T> component = std::make_unique<T>(this, std::forward<Args>(args)...);
+			m_Components.push_back(std::move(component));
 		}
 
 		template<typename T>

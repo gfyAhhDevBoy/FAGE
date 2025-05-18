@@ -2,8 +2,6 @@
 #include <Scene.h>
 #include <GameObject.h>
 
-#include <Components/Test.h>
-
 void KeyboardListener(int);
 
 int main()
@@ -15,7 +13,6 @@ int main()
 	fage::Core::Get().ChangeScene(scene);
 	
 	fage::GameObject* player = scene->CreateGameObject();
-	player->AddComponent<fage::component::Test>();
 
 
 	fage::Core::Get().Run();

@@ -2,6 +2,14 @@
 
 namespace fage
 {
+	GameObject::GameObject() : m_Position({0,0}) 
+	{
+	}
+
+	GameObject::GameObject(Vec2f pos) : m_Position(pos)
+	{
+	}
+
 	void GameObject::Update(float dt)
 	{
 		for (auto& c : m_Components)

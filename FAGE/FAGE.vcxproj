@@ -165,7 +165,6 @@
   <ItemGroup>
     <ClInclude Include="src\Component.h" />
     <ClInclude Include="src\Color.h" />
-    <ClInclude Include="src\Components\Test.h" />
     <ClInclude Include="src\GameObject.h" />
     <ClInclude Include="src\Math\Math.h" />
     <ClInclude Include="src\Render\Display.h" />
@@ -178,7 +177,6 @@
   <ItemGroup>
     <ClCompile Include="src\Color.cpp" />
     <ClCompile Include="src\Component.cpp" />
-    <ClCompile Include="src\Components\Test.cpp" />
     <ClCompile Include="src\GameObject.cpp" />
     <ClCompile Include="src\glad.c" />
     <ClCompile Include="src\Render\Display.cpp" />
