@@ -14,7 +14,7 @@ namespace fage
 		GameObject();
 		GameObject(Vec2f pos);
 
-		void Update(float dt);
+		void Update();
 		void Draw(render::Display& display);
 
 		void SetPosition(Vec2f pos);

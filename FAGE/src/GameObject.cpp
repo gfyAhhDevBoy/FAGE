@@ -10,11 +10,11 @@ namespace fage
 	{
 	}
 
-	void GameObject::Update(float dt)
+	void GameObject::Update()
 	{
 		for (auto& c : m_Components)
 		{
-			c->Update(dt);
+			c->Update();
 		}
 	}
 	void GameObject::Draw(render::Display& display)
