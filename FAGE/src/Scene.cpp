@@ -2,11 +2,11 @@
 
 namespace fage
 {
-	void Scene::Update(float dt)
+	void Scene::Update()
 	{
 		for (auto& obj : m_GameObjects)
 		{
-			obj->Update(dt);
+			obj->Update();
 		}
 	}
 

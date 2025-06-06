@@ -12,7 +12,7 @@ public:
 	Component(GameObject* parent);
 	virtual ~Component() = default;
 
-	virtual void Update(float dt) = 0;
+	virtual void Update() = 0;
 	virtual void Draw(render::Display& display) = 0;
 
 	

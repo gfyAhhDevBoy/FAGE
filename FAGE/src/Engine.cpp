@@ -41,7 +41,7 @@ bool Core::Run()
 		ProcessInput();
 
 
-		m_CurrentScene->Update(0);
+		m_CurrentScene->Update();
 
 		// Drawing
 		m_CurrentScene->Draw(std::shared_ptr(m_Display));

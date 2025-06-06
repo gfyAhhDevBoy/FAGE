@@ -165,6 +165,7 @@
   <ItemGroup>
     <ClInclude Include="src\Component.h" />
     <ClInclude Include="src\Color.h" />
+    <ClInclude Include="src\Components\Test.h" />
     <ClInclude Include="src\GameObject.h" />
     <ClInclude Include="src\Math\Math.h" />
     <ClInclude Include="src\Render\Display.h" />

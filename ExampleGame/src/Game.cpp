@@ -1,8 +1,13 @@
 #include <Engine.h>
 #include <Scene.h>
 #include <GameObject.h>
+#include <Components/Test.h>
+
+#include <memory>
 
 void KeyboardListener(int);
+
+std::shared_ptr<fage::component::Test> test;
 
 int main()
 {
@@ -13,7 +18,7 @@ int main()
 	fage::Core::Get().ChangeScene(scene);
 	
 	fage::GameObject* player = scene->CreateGameObject();
-
+	test = player->AddComponent<fage::component::Test>();
 
 	fage::Core::Get().Run();
 }
@@ -24,5 +29,9 @@ void KeyboardListener(int key)
 	{
 		fage::Core::Get().Stop();
 		
+	}
+	else if (key == fage::input::Space) {
+		
+		test->Stop();
 	}
 }

@@ -11,7 +11,7 @@ namespace fage
 	class Scene
 	{
 	public:
-		void Update(float dt);
+		void Update();
 
 		void Draw(std::shared_ptr<render::Display> display);
 		void SetClearColor(Color color);
