@@ -18,7 +18,7 @@ int main()
 	fage::Core::Get().ChangeScene(scene);
 	
 	fage::GameObject* player = scene->CreateGameObject();
-	test = player->AddComponent<fage::component::Test>();
+
 
 	fage::Core::Get().Run();
 }
