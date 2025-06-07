@@ -2,12 +2,13 @@
 
 namespace fage
 {
-	GameObject::GameObject() : m_Position({0,0}) 
+	GameObject::GameObject() : GameObject({ 0,0 })
 	{
 	}
 
-	GameObject::GameObject(Vec2f pos) : m_Position(pos)
+	GameObject::GameObject(Vec2f pos)
 	{
+		AddComponent<Transform2DComponent>(pos);
 	}
 
 	void GameObject::Update()
@@ -19,20 +20,6 @@ namespace fage
 	}
 	void GameObject::Draw(render::Display& display)
 	{
-	}
-	void GameObject::SetPosition(Vec2f pos)
-	{
-		m_Position = pos;
-	}
-
-	void GameObject::Move(Vec2f pos)
-	{
-		m_Position += pos;
-	}
-
-	inline Vec2f GameObject::GetPosition() const
-	{
-		return m_Position;
 	}
 }
 

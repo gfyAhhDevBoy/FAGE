@@ -5,6 +5,7 @@
 
 #include "Render/Display.h"
 #include "GameObject.h"
+#include "Components/Transform2DComponent.h"
 
 namespace fage
 {

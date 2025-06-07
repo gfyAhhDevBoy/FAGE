@@ -5,6 +5,7 @@
 
 #include "Component.h"
 #include "Math/Math.h"
+#include "Components/Transform2DComponent.h"
 
 namespace fage
 {
@@ -20,10 +21,6 @@ namespace fage
 		void Update();
 		void Draw(render::Display& display);
 
-		void SetPosition(Vec2f pos);
-		void Move(Vec2f pos);
-		inline Vec2f GetPosition() const;
-
 		template<typename T, typename... Args>
 		std::shared_ptr<T> AddComponent(Args&&... args)
 		{
@@ -33,11 +30,9 @@ namespace fage
 			return component;
 		}
 
-		// test
+		
 
 	private:
 		std::vector<std::shared_ptr<Component>> m_Components;
-
-		Vec2f m_Position;
 	};
 }
