@@ -30,9 +30,10 @@ namespace fage
 			return component;
 		}
 
-		
+		std::shared_ptr<Transform2DComponent> GetTransform();
 
 	private:
 		std::vector<std::shared_ptr<Component>> m_Components;
+		std::shared_ptr<Transform2DComponent> transform;
 	};
 }

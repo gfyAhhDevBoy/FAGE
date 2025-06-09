@@ -23,7 +23,6 @@ namespace fage
 	GameObject* Scene::CreateGameObject()
 	{
 		m_GameObjects.push_back(std::make_unique<GameObject>());
-		m_GameObjects.back()->AddComponent<Transform2DComponent>();
 		return m_GameObjects.back().get();
 	}
 
