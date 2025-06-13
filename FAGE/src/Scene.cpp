@@ -22,7 +22,12 @@ namespace fage
 
 	GameObject* Scene::CreateGameObject()
 	{
-		m_GameObjects.push_back(std::make_unique<GameObject>());
+		return CreateGameObject({ 0,0 });
+	}
+
+	GameObject* Scene::CreateGameObject(Vec2f pos)
+	{
+		m_GameObjects.push_back(std::make_unique<GameObject>(pos));
 		return m_GameObjects.back().get();
 	}
 

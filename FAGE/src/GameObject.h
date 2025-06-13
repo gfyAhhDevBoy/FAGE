@@ -22,18 +22,19 @@ namespace fage
 		void Draw(render::Display& display);
 
 		template<typename T, typename... Args>
-		std::shared_ptr<T> AddComponent(Args&&... args)
+		T* AddComponent(Args&&... args)
 		{
 			static_assert(std::is_base_of<Component, T>::value, "T has to be a Component");
-			std::shared_ptr<T> component = std::make_shared<T>(this, std::forward<Args>(args)...);
+			std::unique_ptr<T> component = std::make_unique<T>(this, std::forward<Args>(args)...);
+			T* compPtr = component.get();
 			m_Components.push_back(std::move(component));
-			return component;
+			return compPtr;
 		}
 
 		std::shared_ptr<Transform2DComponent> GetTransform();
 
 	private:
-		std::vector<std::shared_ptr<Component>> m_Components;
-		std::shared_ptr<Transform2DComponent> transform;
+		std::vector<std::unique_ptr<Component>> m_Components;
+		Transform2DComponent* transform;
 	};
 }

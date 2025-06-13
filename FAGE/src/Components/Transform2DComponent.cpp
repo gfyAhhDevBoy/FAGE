@@ -6,7 +6,6 @@ fage::Transform2DComponent::Transform2DComponent(GameObject* parent, Vec2f pos) 
 
 void fage::Transform2DComponent::Update()
 {
-	std::cout << position.x << " " << position.y << std::endl;
 }
 
 void fage::Transform2DComponent::Draw(render::Display& display)

@@ -7,7 +7,7 @@
 
 void KeyboardListener(int);
 
-std::shared_ptr<fage::component::Test> test;
+fage::component::Test* test;
 
 int main()
 {
@@ -17,7 +17,8 @@ int main()
 	scene->SetClearColor({ 0.2f, 0.3f, 0.3f, 1.f });
 	fage::Core::Get().ChangeScene(scene);
 	
-	fage::GameObject* player = scene->CreateGameObject();
+	fage::GameObject* player = scene->CreateGameObject({5, 3});
+	test = player->AddComponent<fage::component::Test>();
 
 	fage::Core::Get().Run();
 }

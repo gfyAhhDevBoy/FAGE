@@ -6,6 +6,7 @@
 #include "Render/Display.h"
 #include "GameObject.h"
 #include "Components/Transform2DComponent.h"
+#include "Math/Math.h"
 
 namespace fage
 {
@@ -18,6 +19,7 @@ namespace fage
 		void SetClearColor(Color color);
 
 		GameObject* CreateGameObject();
+		GameObject* CreateGameObject(Vec2f pos);
 
 	private:
 		Color m_ClearColor;
